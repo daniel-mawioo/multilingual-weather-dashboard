@@ -68,7 +68,7 @@ function App() {
                   onKeyDown={enterKeyPressed}
                   type="text"
                   name="city"
-                  placeholder={<FormattedMessage id="placeholder_text" />}
+                  placeholder="Enter your city...."
                 />
                 <button onClick={(e) => handleUnitsClick(e)}>°C</button>
                 <button onClick={handleLanguageChange}>
