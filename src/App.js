@@ -7,9 +7,11 @@ import Descriptions from "./components/Descriptions";
 import { getFormattedWeatherData } from "./weatherservice";
 import { FaGlobe } from "react-icons/fa";
 
+
 // Import your translation files
 import enMessages from "./languages/en.json";
 import swMessages from "./languages/sw.json";
+import ErrorModal from "./components/ErrorsModal";
 
 function App() {
   const [city, setCity] = useState("nairobi");
@@ -17,17 +19,26 @@ function App() {
   const [units, setUnits] = useState("metric");
   const [bg, setBg] = useState(coldBg);
   const [locale, setLocale] = useState("en");
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchWeatherData = async () => {
-      const data = await getFormattedWeatherData(city, units);
-      setWeather(data);
+      try {
+        const data = await getFormattedWeatherData(city, units);
+        setWeather(data);
 
-      // dynamic bg
-      const thresHold = units === "metric" ? 20 : 60;
-      console.log("get it...", data.temp); // Adjusted threshold for Fahrenheit
-      if (data.temp <= thresHold) setBg(coldBg);
-      else setBg(hotBg);
+        // dynamic bg
+        const thresHold = units === "metric" ? 20 : 60;
+        console.log("get it...", data.temp); // Adjusted threshold for Fahrenheit
+        if (data.temp <= thresHold) setBg(coldBg);
+        else setBg(hotBg);
+        setError(null); // Clear any previous errors
+      } catch (error) {
+        console.error("Error fetching weather data:", error.message);
+        // Set error state to display error message in UI
+        setError(error.message);
+        setWeather(null); // Reset weather data if an error occurs
+      }
     };
     fetchWeatherData();
   }, [setWeather, units, city]);
@@ -58,10 +69,15 @@ function App() {
     sw: swMessages,
   };
 
+  const closeModal = () => {
+    setError(null);
+  };
+
   return (
     <IntlProvider locale={locale} messages={translations[locale]}>
       <div className="app" style={{ backgroundImage: `url(${bg})` }}>
         <div className="overlay">
+          {error && <ErrorModal errorMessage={error} onClose={closeModal} />}
           {weather && (
             <div className="container">
               <div className="section section__inputs">

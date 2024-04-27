@@ -6,51 +6,55 @@ import { MdCompress } from 'react-icons/md';
 import { FormattedMessage } from 'react-intl';
 
 const Descriptions = ({ weather, units }) => {
-    console.log(weather); // Log the weather object for debugging
+    if (!weather) {
+        // If weather data is not available, display an error message
+        return <div className='error-message'>Weather data not available</div>;
+    }
 
     const tempUnit = units === 'metric' ? '°C' : '°F';
     const windUnit = units === 'metric' ? 'm/s' : 'm/h';
+
     const cards = [
         {
             id: 1,
             icon: <FaArrowDown />,
             title: <FormattedMessage id="min_temperature" />,
-            data: weather?.temp_min?.toFixed(), // Use optional chaining here
+            data: weather.temp_min?.toFixed(),
             unit: tempUnit,
         },
         {
             id: 2,
             icon: <FaArrowUp />,
             title: <FormattedMessage id="max_temperature" />,
-            data: weather?.temp_max?.toFixed(), // Use optional chaining here
+            data: weather.temp_max?.toFixed(),
             unit: tempUnit,
         },
         {
             id: 3,
             icon: <BiHappy />,
             title: <FormattedMessage id="feels_like" />,
-            data: weather?.temp_max?.toFixed(),
+            data: weather.feels_like?.toFixed(),
             unit: tempUnit,
         },
         {
             id: 4,
             icon: <MdCompress />,
             title: <FormattedMessage id="pressure" />,
-            data: weather?.pressure,
+            data: weather.pressure,
             unit: "hPa",
         },
         {
             id: 5,
             icon: <MdCompress />,
             title: <FormattedMessage id="humidity" />,
-            data: weather?.humidity,
+            data: weather.humidity,
             unit: "%",
         },
         {
             id: 6,
             icon: <FaWind />,
             title: <FormattedMessage id="wind_speed" />,
-            data: weather?.speed?.toFixed(), // Use optional chaining here
+            data: weather.speed?.toFixed(),
             unit: windUnit,
         },
     ];
@@ -63,7 +67,7 @@ const Descriptions = ({ weather, units }) => {
                         {icon}
                         <small>{title}</small>
                     </div>
-                    <h2>{`${data} ${unit}`}</h2>
+                    <h2>{`${data !== undefined ? data : '--'} ${unit}`}</h2>
                 </div>
             ))}
         </div>
