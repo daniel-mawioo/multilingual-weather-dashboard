@@ -100,3 +100,15 @@
 .temperature>h1{
   font-size: 60px;
 }
+
+.lang--btn{
+  display: flex;
+  align-items: center;
+}
+
+.lang-icon {
+  padding-left: 0.4rem;
+  font-size: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}

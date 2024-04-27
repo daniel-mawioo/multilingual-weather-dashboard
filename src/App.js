@@ -72,9 +72,9 @@ function App() {
                   placeholder="Enter your city...."
                 />
                 <button onClick={(e) => handleUnitsClick(e)}>°C</button>
-                <button onClick={handleLanguageChange}>
-                  <FaGlobe /> {/* Add the globe icon */}
+                <button onClick={handleLanguageChange} className="lang--btn">
                   <FormattedMessage id="language_button_text" />
+                  <FaGlobe className="lang-icon" />
                 </button>
               </div>
               <div className="section section__temperature">
