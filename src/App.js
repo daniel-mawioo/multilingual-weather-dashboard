@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { FormattedMessage, IntlProvider } from "react-intl";
-import "./App.css";
 import hotBg from "./assets/hotBg.jpeg";
 import coldBg from "./assets/cold.png";
 import Descriptions from "./components/Descriptions";

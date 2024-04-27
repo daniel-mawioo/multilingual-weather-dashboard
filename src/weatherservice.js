@@ -49,13 +49,10 @@ const getFormattedWeatherData = async (city, units = "metric") => {
       name,
     };
   } catch (error) {
-    // Handle network errors or any other errors
-    console.error(
-      "Error fetching weather data:Check your internet connection",
-      error.message
-    );
-    throw error; // Rethrow the error to be caught by the caller
+    // Throw the error to be caught by the caller
+    throw error;
   }
 };
+
 
 export { getFormattedWeatherData };
