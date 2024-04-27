@@ -5,6 +5,7 @@ import hotBg from "./assets/hotBg.jpeg";
 import coldBg from "./assets/cold.png";
 import Descriptions from "./components/Descriptions";
 import { getFormattedWeatherData } from "./weatherservice";
+import { FaGlobe } from "react-icons/fa";
 
 // Import your translation files
 import enMessages from "./languages/en.json";
@@ -72,6 +73,7 @@ function App() {
                 />
                 <button onClick={(e) => handleUnitsClick(e)}>°C</button>
                 <button onClick={handleLanguageChange}>
+                  <FaGlobe /> {/* Add the globe icon */}
                   <FormattedMessage id="language_button_text" />
                 </button>
               </div>
