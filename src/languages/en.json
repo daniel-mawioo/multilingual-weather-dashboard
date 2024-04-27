@@ -1,0 +1,11 @@
+{
+  "language_button_text": "ENG",
+  "placeholder_text": "Enter City...",
+  "weather_description": "The weather is {description}",
+  "min_temperature": "Min",
+  "max_temperature": "Max",
+  "feels_like": "Feels like",
+  "pressure": "Pressure",
+  "humidity": "Humidity",
+  "wind_speed": "Wind Speed"
+}

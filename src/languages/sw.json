@@ -1,0 +1,11 @@
+{
+  "language_button_text": "SWA",
+  "placeholder_text": "Ingiza Jiji...",
+  "weather_description": "Hali ya hewa ni {description}",
+  "min_temperature": "Chini",
+  "max_temperature": "Juu",
+  "feels_like": "Inahisi kama",
+  "pressure": "Shinikizo",
+  "humidity": "Unyevu",
+  "wind_speed": "Kasi ya Upepo"
+}

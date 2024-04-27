@@ -3,6 +3,7 @@ import './Descriptions.css';
 import { FaArrowDown, FaArrowUp, FaWind } from 'react-icons/fa';
 import { BiHappy } from 'react-icons/bi';
 import { MdCompress } from 'react-icons/md';
+import { FormattedMessage } from 'react-intl';
 
 const Descriptions = ({ weather, units }) => {
     console.log(weather); // Log the weather object for debugging
@@ -13,42 +14,42 @@ const Descriptions = ({ weather, units }) => {
         {
             id: 1,
             icon: <FaArrowDown />,
-            title: "min",
+            title: <FormattedMessage id="min_temperature" />,
             data: weather?.temp_min?.toFixed(), // Use optional chaining here
             unit: tempUnit,
         },
         {
             id: 2,
             icon: <FaArrowUp />,
-            title: "max",
+            title: <FormattedMessage id="max_temperature" />,
             data: weather?.temp_max?.toFixed(), // Use optional chaining here
             unit: tempUnit,
         },
         {
             id: 3,
             icon: <BiHappy />,
-            title: "feels like",
+            title: <FormattedMessage id="feels_like" />,
             data: weather?.temp_max?.toFixed(),
             unit: tempUnit,
         },
         {
             id: 4,
             icon: <MdCompress />,
-            title: "pressure",
+            title: <FormattedMessage id="pressure" />,
             data: weather?.pressure,
             unit: "hPa",
         },
         {
             id: 5,
             icon: <MdCompress />,
-            title: "humidity",
+            title: <FormattedMessage id="humidity" />,
             data: weather?.humidity,
             unit: "%",
         },
         {
             id: 6,
             icon: <FaWind />,
-            title: "wind speed",
+            title: <FormattedMessage id="wind_speed" />,
             data: weather?.speed?.toFixed(), // Use optional chaining here
             unit: windUnit,
         },
