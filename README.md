@@ -73,7 +73,7 @@ Bonus- default city set to  Nairobi, but other cities still searchable.
 ## Home
 ![Dashboard Preview](./screenshots/main.png)
 
-### Hot and cold weather showing a dynamic background as on the screenshot below.
+### Hot and cold weather showing a dynamic background as on the screenshots below.
 - Temp below 20 is cold and vice versa
 
 _Below are some screenshots of screens from the running application:_
