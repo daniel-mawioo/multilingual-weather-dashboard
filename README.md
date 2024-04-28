@@ -46,6 +46,12 @@ Bonus- default city set to  Nairobi, but other cities still searchable.
    REACT_APP_API_KEY=your-api-key-here
    ```
 
+   ## Runing Tests - Jest and React testing Library
+    ```bash
+   npm test
+   ```
+
+
 ### Usage
 
 1. Start the development server:
@@ -53,6 +59,8 @@ Bonus- default city set to  Nairobi, but other cities still searchable.
    ```bash
    npm start
    ```
+   
+   ![new](./screenshots/tests.png) 
 
 2. Open your browser and navigate to `http://localhost:3000` to view the dashboard.
 
