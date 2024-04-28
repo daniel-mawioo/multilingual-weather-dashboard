@@ -4,13 +4,13 @@ import hotBg from "./assets/hotBg.jpeg";
 import coldBg from "./assets/cold.png";
 import Descriptions from "./components/Descriptions";
 import { getFormattedWeatherData } from "./weatherservice";
-import { FaGlobe } from "react-icons/fa";
-
 
 // Import your translation files
 import enMessages from "./languages/en.json";
 import swMessages from "./languages/sw.json";
 import ErrorModal from "./components/ErrorsModal";
+import ToggleButton from "./components/Button";
+import LanguageSelect from "./components/LanguageSelect";
 
 function App() {
   const [city, setCity] = useState("nairobi");
@@ -86,11 +86,14 @@ function App() {
                   name="city"
                   placeholder="Enter your city...."
                 />
-                <button onClick={(e) => handleUnitsClick(e)}>°C</button>
-                <button onClick={handleLanguageChange} className="lang--btn">
-                  <FormattedMessage id="language_button_text" />
-                  <FaGlobe className="lang-icon" />
-                </button>
+                <ToggleButton
+                  text={`${units === "metric" ? "°C" : "°F"}`}
+                  onClick={handleUnitsClick}
+                />
+                <LanguageSelect
+                  locale={locale}
+                  onChange={handleLanguageChange}
+                />
               </div>
               <div className="section section__temperature">
                 <div className="icon">
