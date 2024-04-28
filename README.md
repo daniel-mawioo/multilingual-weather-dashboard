@@ -50,7 +50,7 @@ Bonus- default city set to  Nairobi, but other cities still searchable.
     ```bash
    npm test
    ```
-
+  ![new](./screenshots/tests.png) 
 
 ### Usage
 
@@ -59,8 +59,6 @@ Bonus- default city set to  Nairobi, but other cities still searchable.
    ```bash
    npm start
    ```
-   
-   ![new](./screenshots/tests.png) 
 
 2. Open your browser and navigate to `http://localhost:3000` to view the dashboard.
 
