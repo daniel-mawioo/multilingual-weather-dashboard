@@ -42,13 +42,8 @@ function App() {
     fetchWeatherData();
   }, [setWeather, units, city]);
 
-  const handleUnitsClick = (e) => {
-    const button = e.currentTarget;
-    const currentUnit = button.innerText.slice(1);
-
-    const isCelsius = currentUnit === "C";
-    button.innerText = isCelsius ? "°F" : "°C";
-    setUnits(isCelsius ? "metric" : "imperial");
+  const handleUnitsClick = () => {
+    setUnits((prevUnits) => (prevUnits === "metric" ? "imperial" : "metric"));
   };
 
   const handleLanguageChange = () => {
@@ -90,6 +85,7 @@ function App() {
                   text={`${units === "metric" ? "°C" : "°F"}`}
                   onClick={handleUnitsClick}
                 />
+
                 <LanguageSelect
                   locale={locale}
                   onChange={handleLanguageChange}
