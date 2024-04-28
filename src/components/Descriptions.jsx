@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Descriptions.css';
 import { FaArrowDown, FaArrowUp, FaWind } from 'react-icons/fa';
 import { BiHappy } from 'react-icons/bi';
@@ -6,6 +6,18 @@ import { MdCompress } from 'react-icons/md';
 import { FormattedMessage } from 'react-intl';
 
 const Descriptions = ({ weather, units }) => {
+    const [loaded, setLoaded] = useState(false);
+
+    useEffect(() => {
+        // Simulate loading by setting a timeout
+        const timeout = setTimeout(() => {
+            setLoaded(true);
+        }, 1000);
+
+        // Clean up timeout to prevent memory leaks
+        return () => clearTimeout(timeout);
+    }, []); // Run only on component mount
+
     if (!weather) {
         // If weather data is not available, display an error message
         return <div className='error-message'>Weather data not available</div>;
@@ -60,9 +72,9 @@ const Descriptions = ({ weather, units }) => {
     ];
 
     return (
-        <div className='section section__descriptions'>
+        <div className={`section section__descriptions ${loaded ? 'loaded' : ''}`}>
             {cards.map(({ id, icon, title, data, unit }) => (
-                <div key={id} className='card'>
+                <div key={id} className={`card ${loaded ? 'loaded' : ''}`}>
                     <div className='description__card-icon'>
                         {icon}
                         <small>{title}</small>
