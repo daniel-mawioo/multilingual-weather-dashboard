@@ -67,7 +67,7 @@ Bonus- default city set to  Nairobi, but other cities still searchable.
 
 # Navigating the App.
 1.Landing page
-![Dashboard Preview](../multilingual-weather-dashboard//screenshots/main.png)
+![Dashboard Preview](./screenshots/main.png)
 
 ## Authors
 
