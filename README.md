@@ -71,6 +71,7 @@ Bonus- default city set to  Nairobi, but other cities still searchable.
 - [React](https://reactjs.org/) - JavaScript library for building user interfaces
 - [react-intl](https://github.com/formatjs/react-intl) - Internationalize React apps
 - [OpenWeatherMap API](https://openweathermap.org/api) - Weather data API
+- [Vercel](https://vercel.com/) -- Hosting Platform.
 
 
 # Navigating the App.
