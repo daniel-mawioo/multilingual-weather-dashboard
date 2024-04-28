@@ -7,9 +7,11 @@ Bonus- default city set to  Nairobi, but other cities still searchable.
 ## Features
 
 - Multilingual UI: Supports English and Swahili languages.
+- Multi-units - for Celsius and Fahrenheit
 - Weather Display: Fetches and displays current weather data from the OpenWeatherMap API for Nairobi.
 - State Management: Utilizes React's context API for managing weather data and language settings.
 - Styling and Responsiveness: Well-styled and responsive design for usability on both mobile and desktop devices.
+- Also added some smooth animation for loading the cards.
 
 ## Getting Started
 
