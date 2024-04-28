@@ -5,7 +5,7 @@ import coldBg from "./assets/cold.png";
 import Descriptions from "./components/Descriptions";
 import { getFormattedWeatherData } from "./weatherservice";
 
-// Import your translation files
+// Import translation files
 import enMessages from "./languages/en.json";
 import swMessages from "./languages/sw.json";
 import ErrorModal from "./components/ErrorsModal";
@@ -23,7 +23,7 @@ function App() {
 
   useEffect(() => {
     const fetchWeatherData = async () => {
-      setLoading(true); // Set loading state to true when fetching data
+      setLoading(true); 
       try {
         const data = await getFormattedWeatherData(city, units);
         setWeather(data);
@@ -32,14 +32,13 @@ function App() {
         const thresHold = units === "metric" ? 20 : 60;
         if (data.temp <= thresHold) setBg(coldBg);
         else setBg(hotBg);
-        setError(null); // Clear any previous errors
+        setError(null); 
       } catch (error) {
         console.error("Error fetching weather data:", error.message);
-        // Set error state to display error message in UI
         setError(error.message);
-        setWeather(null); // Reset weather data if an error occurs
+        setWeather(null);
       } finally {
-        setLoading(false); // Set loading state to false after fetching data
+        setLoading(false); 
       }
     };
     fetchWeatherData();
