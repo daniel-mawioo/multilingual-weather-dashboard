@@ -65,6 +65,9 @@ function App() {
     en: enMessages,
     sw: swMessages,
   };
+  const reloadWindow = () => {
+    window.location.reload();
+  };
 
   const closeModal = () => {
     setError(null);
@@ -74,7 +77,13 @@ function App() {
     <IntlProvider locale={locale} messages={translations[locale]}>
       <div className="app" style={{ backgroundImage: `url(${bg})` }}>
         <div className="overlay">
-          {error && <ErrorModal errorMessage={error} onClose={closeModal} />}
+          {error && (
+            <ErrorModal
+              errorMessage={error}
+              onClose={closeModal}
+              reload={reloadWindow}
+            />
+          )}
           {weather && (
             <div className="container">
               <div className="section section__inputs">
