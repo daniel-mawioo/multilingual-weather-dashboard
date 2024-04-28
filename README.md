@@ -67,7 +67,17 @@ Bonus- default city set to  Nairobi, but other cities still searchable.
 
 # Navigating the App.
 1.Landing page
+
+## Home
 ![Dashboard Preview](./screenshots/main.png)
+
+
+_Below are some screenshots of screens from the running application:_
+| Cold temperatures below 20      |  Hot Weather above 20 | Mobile Screen (list)| Error handling Screen |
+| ----------- | ----------- | ----------- | ----------- |
+| ![splash](./screenshots/main.png) | ![main](./screenshots/main.png)| ![main](./screenshots/mobile.png) | ![new](./screenshots/errorhandling.png) |
+
+
 
 ## Authors
 
