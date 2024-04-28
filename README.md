@@ -73,7 +73,7 @@ Bonus- default city set to  Nairobi, but other cities still searchable.
 
 
 _Below are some screenshots of screens from the running application:_
-| Cold temperatures below 20      |  Hot Weather above 20 | Mobile Screen (list)| Error handling Screen |
+| Cold temperatures below 20      |  Hot Weather above 20 | Mobile Screen Responsive| Error handling Screen |
 | ----------- | ----------- | ----------- | ----------- |
 | ![splash](./screenshots/main.png) | ![main](./screenshots/main.png)| ![main](./screenshots/mobile.png) | ![new](./screenshots/errorhandling.png) |
 
