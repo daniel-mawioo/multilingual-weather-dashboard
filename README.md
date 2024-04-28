@@ -1,6 +1,6 @@
 
 # Multilingual Weather Dashboard
-
+- [Deployed Demo](https://multilingual-weather-dashboard.vercel.app/)
 This is a simple multilingual weather dashboard built using React. It allows users to view current weather data for Nairobi in both English and Swahili languages.
 Bonus- default city set to  Nairobi, but other cities still searchable.
 
