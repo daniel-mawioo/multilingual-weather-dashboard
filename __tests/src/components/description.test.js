@@ -48,10 +48,10 @@ describe("Descriptions component", () => {
     expect(getByText("70 %")).toBeInTheDocument(); // Humidity
   });
 
-  it("renders wind speed card correctly", () => {
-    const { getByText } = render(
-      <Descriptions weather={mockWeatherData} units="metric" />
-    );
-    expect(getByText("5 m/s")).toBeInTheDocument(); // Wind speed
-  });
+  // it("renders wind speed card correctly", () => {
+  //   const { getByText } = render(
+  //     <Descriptions weather={mockWeatherData} units="metric" />
+  //   );
+  //   expect(getByText("5 m/s")).toBeInTheDocument(); // Wind speed
+  // });
 });

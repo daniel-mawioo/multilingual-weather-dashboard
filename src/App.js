@@ -19,16 +19,17 @@ function App() {
   const [bg, setBg] = useState(coldBg);
   const [locale, setLocale] = useState("en");
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchWeatherData = async () => {
+      setLoading(true); // Set loading state to true when fetching data
       try {
         const data = await getFormattedWeatherData(city, units);
         setWeather(data);
 
         // dynamic bg
         const thresHold = units === "metric" ? 20 : 60;
-        console.log("get it...", data.temp); // Adjusted threshold for Fahrenheit
         if (data.temp <= thresHold) setBg(coldBg);
         else setBg(hotBg);
         setError(null); // Clear any previous errors
@@ -37,10 +38,13 @@ function App() {
         // Set error state to display error message in UI
         setError(error.message);
         setWeather(null); // Reset weather data if an error occurs
+      } finally {
+        setLoading(false); // Set loading state to false after fetching data
       }
     };
     fetchWeatherData();
   }, [setWeather, units, city]);
+
 
   const handleUnitsClick = () => {
     setUnits((prevUnits) => (prevUnits === "metric" ? "imperial" : "metric"));
