@@ -1,10 +1,11 @@
 import React from "react";
-import "../index.css";
 
-const ErrorModal = ({ errorMessage, onClose }) => {
+const ErrorModal = ({ errorMessage, onClose, reload }) => {
   const handleClose = () => {
     onClose();
-    window.location.reload(); // Reload the page
+    if (reload) {
+      reload(); // Reload the page if reload function is provided
+    }
   };
 
   return (
