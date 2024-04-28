@@ -50,7 +50,7 @@ Bonus- default city set to  Nairobi, but other cities still searchable.
     ```bash
    npm test
    ```
-  ![new](./screenshots/tests.png) 
+  ![new](./screenshots/test.png) 
 
 ### Usage
 
